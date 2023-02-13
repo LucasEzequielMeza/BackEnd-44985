@@ -1,0 +1,22 @@
+[
+  {
+    "titulo": "Cerveza Honey",
+    "descripcion": "Cerveza a base de malta y miel",
+    "codigo": "48596",
+    "precio": "800",
+    "estado": "true",
+    "stock": "1000",
+    "categoria": "Cerveza",
+    "id": 2
+  },
+  {
+    "titulo": "Cerveza APA",
+    "descripcion": "Cerveza APA",
+    "codigo": "41296",
+    "precio": "800",
+    "estado": "true",
+    "stock": "1000",
+    "categoria": "Cerveza",
+    "id": 3
+  }
+]
