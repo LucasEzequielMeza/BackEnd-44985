@@ -52,12 +52,19 @@ export default class ProductManager {
         }
     }
 
-    async updateById (id, prop, nuevoValor) {
+    async updateById (id, nuevoValor) {
+        const products = await this.getProducts()
+
         try {
-            const productos = await this.getProducts();
-            const producto = productos.find(elemento => elemento.id === id);
-            producto[prop] = nuevoValor
-            return producto
+            const updateProducts = products.map((product) => {
+                if (product.id === id) {
+                    product = nuevoValor
+                    return {... product, id}
+                } else {
+                    return {...product}
+                }
+            })
+            await fs.promises.writeFile(this.path, JSON.stringify(updateProducts))
         } catch (error) {
             console.log(error)
         }
@@ -121,6 +128,35 @@ export default class ProductManager {
             }
         } catch (error) {
             return "El producto no pudo ser guardado";
+        }
+    }
+
+    addProductToCart = async (cartId, productId) => {
+        const carritos = await this.getCarts()
+        try {
+            let carritoIndex = carritos.findIndex((cart) => cart.id === cartId);
+            if(carritoIndex != -1) {
+                let productoIndex = carritos[carritoIndex].products.findIndex((p) => p.product === productId); 
+
+                if(productoIndex != -1) {
+                    carritos[carritoIndex].products[productoIndex].quantity++
+                }
+                else {
+
+                    carritos[carritoIndex].products.push({
+                        product:productId,
+                        quantity:1
+                    })
+                }
+            }
+            
+            else{
+                console.log("El carrito no existe");
+            }
+        
+            await this.writeFile(carritos);
+        } catch (error) {
+            console.log(error)
         }
     }
 }

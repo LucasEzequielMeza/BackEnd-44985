@@ -10,6 +10,6 @@ app.use(express.urlencoded({extended: true}))
 
 app.use('/api/products', productsRouter)
 
-app.use('/api/carts', routerCarts);
+app.use('/api/cart', routerCarts);
 
-app.listen(8080, () => console.log('Server runing'))
+app.listen(8000, () => console.log('Server runing'))
