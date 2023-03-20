@@ -1,1 +1,72 @@
-[{"titulo":"Cerveza Honey","descripcion":"Cerveza a base de malta y miel","codigo":"48596","precio":"800","estado":"true","stock":"500","categoria":"Cerveza","id":2},{"titulo":"Cerveza APA","descripcion":"Cerveza APA","codigo":"41296","precio":"800","estado":"true","stock":"1000","categoria":"Cerveza","id":3}]
+[
+  {
+    "titulo": "Cerveza Honey",
+    "descripcion": "Cerveza a base de malta y miel",
+    "codigo": "48596",
+    "precio": "800",
+    "estado": "true",
+    "stock": "500",
+    "categoria": "Cerveza",
+    "id": 2
+  },
+  {
+    "titulo": "Cerveza APA",
+    "descripcion": "Cerveza APA",
+    "codigo": "41296",
+    "precio": "800",
+    "estado": "true",
+    "stock": "1000",
+    "categoria": "Cerveza",
+    "id": 3
+  },
+  {
+    "titulo": "Cerveza xl",
+    "descripcion": "xxxxxxxxxxxxxxx",
+    "codigo": "485936",
+    "precio": "800",
+    "estado": "true",
+    "stock": "500",
+    "categoria": "Cerveza",
+    "id": 4
+  },
+  {
+    "titulo": "Cerveza xls",
+    "descripcion": "xxxxxxxxxxxxxxx",
+    "codigo": "485936",
+    "precio": "800",
+    "estado": "true",
+    "stock": "500",
+    "categoria": "Cerveza",
+    "id": 5
+  },
+  {
+    "titulo": "Cerveza xlsfff",
+    "descripcion": "xxxxxxxxxxxxxxx",
+    "codigo": "485936",
+    "precio": "800",
+    "estado": "true",
+    "stock": "500",
+    "categoria": "Cerveza",
+    "id": 6
+  },
+  {
+    "titulo": "Cerveza xlsfwwff",
+    "descripcion": "xxxxxxxxxxxxxxx",
+    "codigo": "485936",
+    "precio": "800",
+    "estado": "true",
+    "stock": "500",
+    "categoria": "Cerveza",
+    "id": 7
+  },
+  {
+    "titulo": "Cervezasfdsd",
+    "descripcion": "xxxxxxxxxxxxxxx",
+    "codigo": "485936",
+    "precio": "800",
+    "estado": "true",
+    "stock": "500",
+    "categoria": "Cerveza",
+    "id": 8
+  }
+]

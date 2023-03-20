@@ -154,7 +154,7 @@ export default class ProductManager {
                 console.log("El carrito no existe");
             }
         
-            await this.writeFile(carritos);
+            await fs.promises.writeFile(this.path, JSON.stringify(carritos, null, 2));
         } catch (error) {
             console.log(error)
         }

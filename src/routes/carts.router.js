@@ -1,5 +1,5 @@
 import { Router } from "express";
-import ProductManager from "../manager/productManager.js";
+import ProductManager from "./../dao/fileManagers/manager/productManager.js";
 const productManager = new ProductManager('carts.txt');
 const routerCarts = new Router();
 
@@ -19,7 +19,7 @@ routerCarts.get('/:cid', async (req, res) => {
 })
 
 
-routerCarts.post('/:cid/product/:pid', async (req, res) => {
+routerCarts.post('/:cid/products/:pid', async (req, res) => {
     try {
         const idCart = Number(req.params.cid)
         const idProduct = Number(req.params.pid)
