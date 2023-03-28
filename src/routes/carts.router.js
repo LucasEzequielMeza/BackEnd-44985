@@ -9,7 +9,7 @@ routerCarts.post('/', async (req, res) => {
         return res.status(400).send({status: 'error', message: 'Valores incompletos'})
     }
     const carts = await productManager.addCarts(newCart)
-    res.send({status: 'correcto', message: 'Producto creado'})
+    res.send({status: 'correcto', message: 'Producto creado', payload: carts})
 })
 
 routerCarts.get('/:cid', async (req, res) => {

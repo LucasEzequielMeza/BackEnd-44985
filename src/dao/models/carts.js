@@ -4,8 +4,8 @@ const cartsCollections = 'carts'
 
 const cartsSchema = new mongoose.Schema({
     cart: {
-        type: Array,
-        default: []
+        type: Object,
+        default: {}
     }
 })
 

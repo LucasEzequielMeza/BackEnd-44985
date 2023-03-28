@@ -4,9 +4,9 @@ import Products from "../../dao/dbManagers/products.manager.js";
 const router = Router()
 const productsManager = new Products()
 
-router.get('/products', async (req, res) => {
+router.get('/', async (req, res) => {
     const product = await productsManager.getAll()
-    res.render('products', product)
+    res.render('products', { product })
 })
 
 export default router

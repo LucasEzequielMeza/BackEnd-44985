@@ -136,8 +136,9 @@ export default class ProductManager {
         try {
             let carritoIndex = carritos.findIndex((cart) => cart.id === cartId);
             if(carritoIndex != -1) {
+                console.log(carritos[carritoIndex].products);
                 let productoIndex = carritos[carritoIndex].products.findIndex((p) => p.product === productId); 
-
+                console.log('HOLA',productoIndex)
                 if(productoIndex != -1) {
                     carritos[carritoIndex].products[productoIndex].quantity++
                 }
