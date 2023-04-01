@@ -9,6 +9,11 @@ export default class Products {
         return products
     }
 
+    getProductById = async (id) => {
+        const product = await productsModel.findById({ _id: id })
+        return product
+    }
+
     save = async (product) => {
         const result = await productsModel.create(product)
         return result

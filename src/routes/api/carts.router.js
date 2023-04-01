@@ -26,16 +26,60 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.get('/:cid', async (req, res) => {
+    const idCart = req.params.cid
+    try {
+        const cart = await cartsManager.getProductsCart(idCart)
+        res.send({ message: "Success", payload: cart });
+    } catch (error) {
+        res.status(400).send({status: "Error",message: "Ha ocurrido un inconveniente en el servidor"});
+    }
+})
+
 router.post('/:cid/products/:pid', async (req, res) => {
     try {
         const idCart = req.params.cid
         const idProduct = req.params.pid
 
-        await cartsManager.addProductToCart(idCart, idProduct)
-
-        res.status(200).send({status: 'success', message: 'Product added successfully'})
+        const result = await cartsManager.addProductToCart(idCart, idProduct)
+        res.status(200).send({status: 'success', message: 'Product added successfully', payload: result})
     } catch (error) {
-        console.log(error)
+        res.status(400).send({status: "Error",message: "Ha ocurrido un inconveniente en el servidor"});
+    }
+})
+
+router.delete('/:cid/products/:pid', async (req, res) => {
+    const idCart = req.params.cid
+    const idProduct = req.params.pid
+    try {
+        const result = await cartsManager.deleteProductToCart(idCart, idProduct)
+        res.send({ message: "Success", payload: result });
+    } catch (error) {
+        res.status(400).send({status: "Error",message: "Ha ocurrido un inconveniente en el servidor"});
+    }
+})
+
+
+router.put('/:cid', async (req, res) => {
+    const idCart = req.params.cid
+    const product = req.body
+    try {
+        const result = await cartsManager.updateProductToCart(idCart, product)
+        res.send({message: 'success', payload: result})
+    } catch (error) {
+        res.status(400).send({status: "Error",message: "Ha ocurrido un inconveniente en el servidor"});
+    }
+})
+
+router.put('/:cid/products/pid', async (req, res) => {
+    const idCart = req.params.cid
+    const idProduct = req.params.pid
+    const quantity = req.body
+    try {
+        const result = await cartsModel.updateQuantityProductToCart(idCart, idProduct, quantity)
+        res.send({message: 'success', payload: result})
+    } catch (error) {
+        res.status(400).send({status: "Error",message: "Ha ocurrido un inconveniente en el servidor"});
     }
 })
 

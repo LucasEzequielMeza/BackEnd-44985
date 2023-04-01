@@ -1,8 +1,35 @@
-{{#each product}}
-    <p>{{this.title}}</p>
-    <p>{{this.description}}</p>
-    <p>{{this.price}}</p>
-    <p>{{this.stock}}</p>
-    <p>{{this.code}}</p>
-    <p>{{this.category}}</p>
-{{/each}}
+<div class="productsContainer">
+    <div class="title">
+        <h2>Todos los productos</h2>
+    </div>
+    <div class="cardsProduct">
+        {{#each products}}
+            <div class="cardProduct">
+                <div class="cardImg">
+                    <img src={{this.thumbnail}} alt={{this.title}} class="img">
+                </div>
+                <div class="cardBody">
+                    <a class="nav_link" href="/product-detail?pid={{this._id}}"></a>
+                    <h4>{{this.title}}</h4>
+                </div>
+                <div class="cardPrice">
+                    $ {{this.price}}
+                </div>
+            </div>
+            <span class="separador"></span>
+            <button class="addButton" id={{this._id}} onclick="addCart('{{this._id}}')"><i class="fa-solid fa-bag-shopping"></i> <span>Agregar al carrito</span></button>
+    </div>
+    {{/each}}
+    <div class="navegateButtons">
+        {{#if hasPrevPage}}
+            <a href="/products?page={{prevPage}}" class="navegateButton"><button>Anterior</button></a>
+        {{/if}}
+
+
+        {{#if hasNextPage}}
+            <a href="/products?page={{nextPage}}" class="navegateButton"><button>Siguiente</button></a>
+        {{/if}}
+    </div>
+</div>
+
+<script src="/js/products.js"></script>

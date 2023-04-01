@@ -28,7 +28,11 @@ const productsSchema = new mongoose.Schema({
     category: {
         type: String,
         required: true
-    }
+    },
+    thumbnail: {
+        type: Array,
+        default: []
+    },
 })
 
 productsSchema.plugin(mongoosePaginate)
