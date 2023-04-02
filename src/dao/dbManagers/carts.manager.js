@@ -1,5 +1,5 @@
-import { cartsModel } from "../models/carts.js"
-import { productsModel } from "../models/products.js";
+import { cartsModel } from "../models/carts.model.js"
+import { productsModel } from "../models/products.model.js";
 import Products from "./products.manager.js"
 
 const productsManager = new Products();

@@ -1,4 +1,4 @@
-import { productsModel } from "../models/products.js";
+import { productsModel } from "../models/products.model.js";
 export default class Products {
     constructor () {
         console.log('Working products with DB in mongoDB')
